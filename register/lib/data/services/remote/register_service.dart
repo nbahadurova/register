@@ -17,7 +17,7 @@ class RegisterService {
       "username": username,
       "mobile": mobile,
       "password": password,
-      "passwordConfirm": passwordConfirm,
+      "password_confirm": passwordConfirm,
     };
     print(requestBody);
     final response = await authDio.post(endpoint, data: requestBody);

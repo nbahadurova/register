@@ -28,7 +28,7 @@ class RegisterCubit extends Cubit<RegisterState> {
           controllers['username']!.text,
           controllers['mobile']!.text,
           controllers['password']!.text,
-          controllers['passwordConfirm']!.text);
+          controllers['password_confirm']!.text);
       emit(RegisterSuccess(result));
     } on SocketException catch (e) {
       emit(RegisterNetworkError());

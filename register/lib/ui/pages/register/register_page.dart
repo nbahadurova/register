@@ -41,7 +41,7 @@ class RegisterPage extends StatelessWidget {
             ),
           ),
           TextFormField(
-            controller: cubit.controllers['passwordConfirm'],
+            controller: cubit.controllers['password_confirm'],
             decoration: const InputDecoration(
               hintText: "password confirm",
             ),
@@ -64,9 +64,9 @@ class RegisterPage extends StatelessWidget {
                     ),
                     (route) => false);
               } else if (state is RegisterFailure) {
-                // Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
+                    duration: Duration(seconds: 3),
                     backgroundColor: Colors.red,
                     margin: EdgeInsets.all(24),
                     shape: RoundedRectangleBorder(
