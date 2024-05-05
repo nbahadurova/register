@@ -8,9 +8,9 @@ final class RegisterInitial extends RegisterState {}
 final class RegisterLoading extends RegisterState {}
 
 final class RegisterSuccess extends RegisterState {
-  final RegisterResponse _registerResponse;
+  final RegisterResponse registerResponse;
 
-  RegisterSuccess(this._registerResponse);
+  RegisterSuccess(this.registerResponse);
 }
 
 final class RegisterNetworkError extends RegisterState {}

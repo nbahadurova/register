@@ -7,8 +7,8 @@ class AuthRepository implements AuthContract {
 
   final RegisterService _authService;
   @override
-  Future<RegisterResponse> register(
-          String email, String username,
-          String password, String passwordConfirm) =>
-      _authService.register(email, username, password, passwordConfirm);
+  Future<RegisterResponse> register(String email, String username,
+          String mobile, String password, String passwordConfirm) =>
+      _authService.register(
+          email, username, mobile, password, passwordConfirm);
 }

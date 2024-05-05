@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:register/utils/di/locator.dart';
 import 'package:register/utils/helpers/pager.dart';
 
-void main() {
-  setupLocator();
+void main() async {
+  await init();
+  await setupLocator();
   runApp(const MyApp());
 }
 

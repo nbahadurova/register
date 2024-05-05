@@ -9,24 +9,24 @@ import 'package:register/data/services/remote/register_service.dart';
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit(this._authContract) : super(RegisterInitial());
-  final AuthContract _authContract;
+  RegisterCubit(this._registerService) : super(RegisterInitial());
+  final RegisterService _registerService;
 
   final controllers = {
     'email': TextEditingController(),
     'username': TextEditingController(),
-    // 'mobile': TextEditingController(),
+    'mobile': TextEditingController(),
     'password': TextEditingController(),
-    'passwordConfirm': TextEditingController(),
+    'password_confirm': TextEditingController(),
   };
 
   void register() async {
     try {
       emit(RegisterLoading());
-      final result = await _authContract.register(
+      final result = await _registerService.register(
           controllers['email']!.text,
           controllers['username']!.text,
-          // controllers['mobile']!.text,
+          controllers['mobile']!.text,
           controllers['password']!.text,
           controllers['passwordConfirm']!.text);
       emit(RegisterSuccess(result));

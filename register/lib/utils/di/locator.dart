@@ -5,7 +5,6 @@ import 'package:register/data/repositories/auth_repository.dart';
 import 'package:register/data/services/remote/register_service.dart';
 import 'package:register/data/services/local/register__local_service.dart';
 
-
 final GetIt locator = GetIt.instance;
 
 Future<void> init() async {
@@ -15,9 +14,9 @@ Future<void> init() async {
 Future<void> setupLocator() async {
   locator.registerLazySingleton(() => RegisterService());
   locator.registerLazySingleton<AuthContract>(() => AuthRepository(locator()));
-  final Box<String> box = await Hive.openBox('loginBox');
-  locator
-      .registerLazySingleton<RegisterLocalService>(() => RegisterLocalService(box));
+  final Box<String> box = await Hive.openBox('registerBox');
+  // locator
+  //     .registerLazySingleton<RegisterLocalService>(() => RegisterLocalService(box));
 
   // locator.registerLazySingleton(() => CategoryService());
   // locator.registerLazySingleton<CategoryContract>(

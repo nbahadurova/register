@@ -28,12 +28,12 @@ class RegisterPage extends StatelessWidget {
               hintText: "username",
             ),
           ),
-          // TextFormField(
-          //   controller: cubit.controllers['mobile'],
-          //   decoration: const InputDecoration(
-          //     hintText: "mobile",
-          //   ),
-          // ),
+          TextFormField(
+            controller: cubit.controllers['mobile'],
+            decoration: const InputDecoration(
+              hintText: "mobile",
+            ),
+          ),
           TextFormField(
             controller: cubit.controllers['password'],
             decoration: const InputDecoration(
@@ -43,7 +43,7 @@ class RegisterPage extends StatelessWidget {
           TextFormField(
             controller: cubit.controllers['passwordConfirm'],
             decoration: const InputDecoration(
-              hintText: "passwordConfirm",
+              hintText: "password confirm",
             ),
           ),
           BlocListener<RegisterCubit, RegisterState>(
